@@ -7,12 +7,18 @@ function App() {
  const [counter,setCounter] = useState(0)
   // let counter = 15;
   const addValue = () =>{
+
     // counter +=1;
     if(counter >= 20) return alert('Opps Maximum limit Reached....')
     setCounter(counter + 1)
+  // here usestate senda data in batches_>>>because they are updating the same variable again anad again.so below is the solution
+    setCounter((prevCounter) => prevCounter + 1)
+    setCounter((prevCounter) => prevCounter + 1)
+    setCounter((prevCounter) => prevCounter + 1)
   }
-const removeValue = () =>{
 
+
+const removeValue = () =>{
   if(counter <= 0) return alert('oops cant decrease more  !!!!')
   setCounter(counter - 1);
    console.log("remove clicked",counter);
