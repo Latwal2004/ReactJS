@@ -94,7 +94,7 @@ Whenever the user clicks a button, the `setColor()` function updates the full-sc
 ### Step 1: Clone the Repository
 
 ```bash
-git clone 
+git clone https://github.com/Latwal2004/ReactJS.git
 ```
 
 ### Step 2: Move to Project Folder
