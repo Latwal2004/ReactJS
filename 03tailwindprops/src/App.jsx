@@ -12,12 +12,13 @@ function App() {
   return (
     <>
       <h1 className='bg-green-400 text-black p-4 rounded-4xl m'>Tailwind CSS</h1>
-      {/* //passing props specially an object */}
+      {/* //passing props specially an object  last passed object is shown on Ui*/}
       {/* <Card channel = "RaectJS" userInfo = {myObj} someObj={newArr} /> */}
-      {/* //passing multiple props */}
-      <Card username="Harish" btnText="clcik me" userNumber="1" />
-      <Card username="Ansh Sharma" btnText="Clicked" userNumber="2" />
-      <Card username="Nikhil" btnText="visit me" userNumber="3" />
+      {/* //passing multiple props as children to the card function */}
+
+      <Card username="Harish" btnText="clcik me" employeeCard="#agndlove0231" userRegisterDate={"21-04-2026"}/>
+      <Card username="Ansh Sharma" btnText="Clicked" employeeCard="#bilbo bergins" userRegisterDate={"21-04-2026"} />
+      <Card username="Nikhil" btnText="visit me" employeeCard="#Samug dragon" userRegisterDate={"21-04-2026"} />
     </>
   )
 }
