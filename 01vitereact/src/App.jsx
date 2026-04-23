@@ -12,9 +12,14 @@ import { ProductRender } from './DestructuringProps'
 //-->Props Scenarioes------>defaultProps
 import { GreetingUser } from './DefaultProps'
 
+
+// Props Patterns
 import { UserInfo } from './UserInfo'
 import { UserCard } from './UserCard'
 import { CardWrapper } from './PassingJsAsChild'
+
+//consitional rendering
+import { UserDetails} from './UserDetails'
 function App() {
 
 
@@ -88,6 +93,22 @@ function App() {
         <p>Bruce@gmail.com</p>
         <p></p>
       </CardWrapper>
+   
+   //conditional rendering
+    
+   <UserDetails name = "Bruce" 
+   isOnline = {true} 
+   isPremium={true} 
+   isNewUser={true} 
+   role={"admin"}/>
+
+   <UserDetails name = "Banner"
+    isOnline = {true} 
+    hideOffline={true} 
+     isPremium={true} 
+     role={'vip'}/>
+   
+   
     </>
   )
 }
