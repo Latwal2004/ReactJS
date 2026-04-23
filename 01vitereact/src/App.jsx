@@ -20,6 +20,14 @@ import { CardWrapper } from './PassingJsAsChild'
 
 //consitional rendering
 import { UserDetails} from './UserDetails'
+
+
+//list rendering
+import{ ProductList } from './ProductList'
+import {NameList}  from './NameList'
+
+import {TodoList} from './IndexAsAntiPattern'
+
 function App() {
 
 
@@ -49,12 +57,12 @@ function App() {
 
 
 
-  //props by code evalution
+ {/*   props by code evalution */}
   return (
     <>
       <Welcome name="Harish" alise="Harshu" />
 
-     //multiple props passing
+     {/* multiple props passing */}
       <MultipleProps
         title="Gaming Laptop"
         price={129.99}
@@ -62,7 +70,7 @@ function App() {
         category={["Laptop", "Computer", "Gaming"]}
       />
 
-      //Destructuring
+      {/* Destructuring */}
       <ProductRender
         title="Gaming Laptop"
         price={129.99}
@@ -76,11 +84,11 @@ function App() {
         category={["Laptop", "Word Computeing XL",]}
       />
 
-    //defaultProps
+{/* defaultProps */}
       <GreetingUser name="Nikhil" msg="WakeUp...." />
       <GreetingUser name="Ansh" msg="WakeUp...." />
-      <GreetingUser name="Ansh" />//it use name from propa and msg as default
-      <GreetingUser />//it uses the default values
+      <GreetingUser name="Ansh" />  {/*it use name from propa and msg as default*/}
+      <GreetingUser />{/*it uses the default values */}
 
       <UserInfo name="Harish"
         age={23}
@@ -94,8 +102,7 @@ function App() {
         <p></p>
       </CardWrapper>
    
-   //conditional rendering
-    
+  {/* conditional rendering */}
    <UserDetails name = "Bruce" 
    isOnline = {true} 
    isPremium={true} 
@@ -108,7 +115,12 @@ function App() {
      isPremium={true} 
      role={'vip'}/>
    
-   
+   {/* rendering Lists */}
+   <ProductList/>
+
+   {/* index as key anti pattern */}
+    <NameList/>
+    <TodoList/>
     </>
   )
 }
