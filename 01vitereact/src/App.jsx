@@ -18,15 +18,26 @@ import { UserInfo } from './UserInfo'
 import { UserCard } from './UserCard'
 import { CardWrapper } from './PassingJsAsChild'
 
-//consitional rendering
-import { UserDetails} from './UserDetails'
+//conditional rendering
+import { UserDetails } from './UserDetails'
 
 
 //list rendering
-import{ ProductList } from './ProductList'
-import {NameList}  from './NameList'
+import { ProductList } from './ProductList'
+import { NameList } from './NameList'
 
-import {TodoList} from './IndexAsAntiPattern'
+import { TodoList } from './IndexAsAntiPattern'
+
+import { Alert } from './Alert'
+
+{/*event Handling*/ }
+import { CustomButton } from './CustomButton'
+
+  {/*Event handler as props*/}
+  import {Contact} from './ContactUs'
+  import {Newsletter} from './Newsletter'
+  import {Menu} from './Menu' 
+  import {EventHandle} from './EventHandling'
 
 function App() {
 
@@ -57,12 +68,12 @@ function App() {
 
 
 
- {/*   props by code evalution */}
+  {/*   props by code evalution */ }
   return (
     <>
       <Welcome name="Harish" alise="Harshu" />
 
-     {/* multiple props passing */}
+      {/* multiple props passing */}
       <MultipleProps
         title="Gaming Laptop"
         price={129.99}
@@ -84,7 +95,7 @@ function App() {
         category={["Laptop", "Word Computeing XL",]}
       />
 
-{/* defaultProps */}
+      {/* defaultProps */}
       <GreetingUser name="Nikhil" msg="WakeUp...." />
       <GreetingUser name="Ansh" msg="WakeUp...." />
       <GreetingUser name="Ansh" />  {/*it use name from propa and msg as default*/}
@@ -101,26 +112,46 @@ function App() {
         <p>Bruce@gmail.com</p>
         <p></p>
       </CardWrapper>
-   
-  {/* conditional rendering */}
-   <UserDetails name = "Bruce" 
-   isOnline = {true} 
-   isPremium={true} 
-   isNewUser={true} 
-   role={"admin"}/>
 
-   <UserDetails name = "Banner"
-    isOnline = {true} 
-    hideOffline={true} 
-     isPremium={true} 
-     role={'vip'}/>
-   
-   {/* rendering Lists */}
-   <ProductList/>
+      {/* conditional rendering */}
+      <UserDetails name="Bruce"
+        isOnline={true}
+        isPremium={true}
+        isNewUser={true}
+        role={"admin"} />
 
-   {/* index as key anti pattern */}
-    <NameList/>
-    <TodoList/>
+      <UserDetails name="Banner"
+        isOnline={true}
+        hideOffline={true}
+        isPremium={true}
+        role={'vip'} />
+
+      {/* rendering Lists */}
+      <ProductList />
+
+      {/* index as key anti pattern */}
+      <NameList />
+      <TodoList />
+
+
+      {/* styling */}
+
+      <Alert> Your changes have been saved !</Alert>
+      <Alert type="error"> Your changes have been saved !</Alert>
+
+
+
+      {/* handling events */}
+      {/* <CustomButton/> */}
+      <CustomButton text="like" />
+      <CustomButton text="Comment" />
+
+      {/*Event handler as props*/}
+      <Contact />
+      <Newsletter />
+      <Menu />
+      <EventHandle/>
+
     </>
   )
 }
