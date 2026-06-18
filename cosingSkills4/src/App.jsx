@@ -22,17 +22,37 @@
 // }
  
 // export default App  //ContextApiComponent
+// import React from 'react'
+// import Parent from './ContextAPIComponent/Parent'
+// import userContext from './ContextAPIComponent/UserContext'
+// const App = () => {
+//   const user = 'Harish'
+//   return (
+//     <div style={{backgroundColor:"grey", padding:"10px",  textAlign:"center"}}>
+//       <h1>App Compnent</h1>
+//       <userContext.Provider value={user}>
+//           <Parent/>
+//       </userContext.Provider>
+//     </div>
+//   )
+// }
+
+// export default App
+
 import React from 'react'
-import Parent from './ContextAPIComponent/Parent'
-import userContext from './ContextAPIComponent/UserContext'
+import useToggle from './CustomHooksComponent/useToggle'
+
 const App = () => {
-  const user = 'Harish'
+  const [value,toggleValue] = useToggle(true)
   return (
-    <div style={{backgroundColor:"grey", padding:"10px",  textAlign:"center"}}>
-      <h1>App Compnent</h1>
-      <userContext.Provider value={user}>
-          <Parent/>
-      </userContext.Provider>
+    <div>
+      <button onClick={toggleValue}>Toggle Heading</button>
+      <button onClick={() => toggleValue(false)}>Hide Heading</button>
+      <button onClick={() => toggleValue(true)}>Show Heading</button>
+{
+  value?<h1>Cutom hooks in react</h1> : null
+
+}
     </div>
   )
 }
